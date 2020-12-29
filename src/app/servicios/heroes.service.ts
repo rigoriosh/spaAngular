@@ -59,7 +59,12 @@ import { Injectable } from '@angular/core';
      }
 
      getHeroes = (): Heroe[] => this.heroes;
-     getHeroe = (id: number) => this.heroes[id];
+     getHeroe = (hero: {}) => {
+       console.log(hero);
+       console.log(this.heroes);
+       const heroSelected = this.heroes.find(e => e.nombre === hero);
+       return heroSelected;
+     }
      buscarHeroeToService(termino: string): Heroe[]{
        const heroresArray: Heroe[] = [];
        termino = termino.toLowerCase();

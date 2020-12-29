@@ -4,11 +4,13 @@ import { HomeComponent} from './components/home/home.component';
 import { AboutComponent} from './components/about/about.component';
 import {HeroesComponent} from './components/heroes/heroes.component';
 import {DetalleHeroeComponent} from './components/detalle-heroe/detalle-heroe.component';
+import {BuscadorHeroesComponent} from './components/buscador-heroes/buscador-heroes.component';
 const APP_ROUTES: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'abaut', component: AboutComponent},
     {path: 'heroes', component: HeroesComponent},
     {path: 'detalleHeroe/:id', component: DetalleHeroeComponent},
+    {path: 'shearchedHeroe/:termino', component: BuscadorHeroesComponent},
     {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

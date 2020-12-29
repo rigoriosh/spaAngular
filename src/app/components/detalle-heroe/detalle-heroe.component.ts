@@ -8,13 +8,7 @@ import { HeroesService, Heroe } from '../../servicios/heroes.service';
 })
 export class DetalleHeroeComponent implements OnInit {
 
-  heroSelected: Heroe = {
-    aparicion: '',
-    bio: '',
-    casa: '',
-    img: '',
-    nombre: ''
-  };
+  heroSelected: any = [];
   constructor(
     private myActiRout: ActivatedRoute,
     private myServisHeroe: HeroesService
@@ -22,7 +16,7 @@ export class DetalleHeroeComponent implements OnInit {
     this.myActiRout.params.subscribe(p => {
       console.log(p, p.id);
       this.heroSelected = this.myServisHeroe.getHeroe(p.id);
-      console.log(this.heroSelected)
+      console.log(this.heroSelected);
     });
   }
 

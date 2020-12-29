@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroesService, Heroe } from '../../../servicios/heroes.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
 })
-export class NavBarComponent implements OnInit {  
+export class NavBarComponent implements OnInit {
 
-  constructor(private heroService: HeroesService) { }
+  constructor(private myRouters: Router) { }
 
   ngOnInit(): void {
   }
 
   buscarHeroe(termino: string): void{
     console.log(termino);
-    const heroes = this.heroService.buscarHeroeToService(termino);
-    console.log(heroes);
+    this.myRouters.navigate(['/shearchedHeroe', termino]); // el / es por q es relativo a nuestra ubicaión
   }
 
 }
